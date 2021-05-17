@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Página 2</title>
+	<meta charset="utf-8">
+</head>
+
+<script type="text/javascript">
+	function validate(){
+
+		if (document.formulario.nome.value.length<1){
+			alert("Erro preencha o campo");
+			return false;
+		}
+		return true;
+	}
+
+	function addLine(){
+		var div = document.getElementById('formBody');
+		var linha = '<label>Nome: </label><input type="text" name="nome[]" ><input type="button" name="add" value="Adicionar" onclick="addLine()"><br>'
+		div.innerHTML += linha;
+	}
+</script>
+<body>
+<form name="formulario" onsubmit="return(validate());" action="teste.php" method="POST">
+
+	<div id="formBody">
+	<label>Nome: </label>
+	<input type="text" name="nome[]" >
+	<input type="button" name="add" value="Adicionar" onclick="addLine()"><br>
+
+	</div>
+
+	<input type="submit" value="Salvar">
+	
+</form>
+</body>
+</html>

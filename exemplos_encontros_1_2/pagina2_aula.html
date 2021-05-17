@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Página 2</title>
+	<meta charset="utf-8">
+
+	<script type="text/javascript">
+		function validate(){
+			if (document.formulario.nome.value.length < 3){
+				alert("Escreva mais");
+				return false;
+			}
+			return true;
+		}
+
+		function adline(){
+			var div = document.getElementById('formBody');
+			var linha = '<label>Nova Linha: </label><input type="text" name="nome[]"> <input type="button" name="add" value="Adicionar" onclick="adline()"><br>'; 
+			div.innerHTML += linha;
+		}
+	</script>
+</head>
+<body>
+
+	<div class="header">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Página 1</a></li>
+			<li><a href="pagina2.html">Página 2</a></li>
+		</ul>
+	</div>
+
+	<div class="sidebar">
+		<ul>
+			<li><a href="#amizade">Amizade</a></li>
+			<li><a href="#">Página 1</a></li>
+			<li><a href="#">Página 2</a></li>
+		</ul>
+	</div>
+	<form name="formulario" onsubmit="return(validate())" method="POST" action="teste.php">
+		<div id="formBody">
+			<label>Nome: </label>
+			<input type="text" name="nome[]">
+			<input type="button" name="add" value="Adicionar" onclick="adline()">
+			<br>
+
+
+		</div>
+		
+
+		<input type="submit" value="Salvar">
+		
+	</form>
+
+</body>
+</html>
