@@ -1,0 +1,53 @@
+<html>
+	<head>
+			<title>Calculadora</title>
+			<meta charset="utf-8">
+			<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script type="text/javascript">
+			function pressed(caractere){
+				document.frm_calc.txt_01.value  += caractere;
+			}
+			function calcular(){
+				document.frm_calc.txt_01.value += " = " + eval(document.frm_calc.txt_01.value)
+			}
+		</script>
+	</head>
+	<body>
+<form name="frm_calc" action>
+
+<table width="200" cellpadding="3" cellspacing="5" style="margin-left: 250px; color:#FFB90F; background-color:#000000;">
+	<tr>
+		<td colspan="5"align="Center" bgColor="#FFB90F"><Font Face="Verdana" Size="24" Color="#000000"><b>Calculadora</b></font></td>
+	</tr>
+	<tr>
+		<td colspan="3"><input type="text" name="txt_01" value="0" style="font-size: 24px; color:#000000; background-color:#CFCFCF;border:2pt solid #FFB90F"></td>
+		<td><input type="reset" value="AC" onclick="" class="button-class"></td>
+		<td><input type="button" value="=" name="btn_igual" onclick="calcular()" class="button-class"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="7" name="btn_7" onclick="pressed(7)" class="button-class"></td>
+		<td><input type="button" value="8" name="btn_8" onclick="pressed(8)" class="button-class"></td>
+		<td><input type="button" value="9" name="btn_9" onclick="pressed(9)" class="button-class"></td>
+		<td><input type="button" value="+" name="btn_soma" onclick="pressed('+')" class="button-class"></td>
+		<td><input type="button" value="-" name="btn_subt" onclick="pressed('-')" class="button-class"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="4" name="btn_4" onclick="pressed(4)" class="button-class"></td>
+		<td><input type="button" value="5" name="btn_5" onclick="pressed(5)" class="button-class"></td>
+		<td><input type="button" value="6" name="btn_6" onclick="pressed(6)" class="button-class"></td>
+		<td><input type="button" value="*" name="btn_mult" onclick="pressed('*')" class="button-class"></td>
+		<td><input type="button" value="/" name="btn_divi" onclick="pressed('/')" class="button-class"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="1" name="btn_1" onclick="pressed(1)" class="button-class"></td>
+		<td><input type="button" value="2" name="btn_2" onclick="pressed(2)" class="button-class"></td>
+		<td><input type="button" value="3" name="btn_3" onclick="pressed(3)" class="button-class"></td>
+		<td><input type="button" value="0" name="btn_0" onclick="pressed(0)" class="button-class"></td>
+		<td><input type="button" value="." name="btn_pont" onclick="pressed('.')" class="button-class"></td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>
