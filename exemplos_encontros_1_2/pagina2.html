@@ -7,7 +7,6 @@
 
 <script type="text/javascript">
 	function validate(){
-
 		if (document.formulario.nome.value.length<1){
 			alert("Erro preencha o campo");
 			return false;
@@ -25,9 +24,9 @@
 <form name="formulario" onsubmit="return(validate());" action="teste.php" method="POST">
 
 	<div id="formBody">
-	<label>Nome: </label>
-	<input type="text" name="nome[]" >
-	<input type="button" name="add" value="Adicionar" onclick="addLine()"><br>
+		<label>Nome: </label>
+		<input type="text" name="nome[]" >
+		<input type="button" name="add" value="Adicionar" onclick="addLine()"><br>
 
 	</div>
 
