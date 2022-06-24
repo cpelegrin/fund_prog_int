@@ -2,14 +2,25 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Formulário</title>
+	<script type="text/javascript">
+		function duplicar(){
+			var dup = document.getElementById("dup");
+			dup.innerHTML += '<label for="texto">Enviar algo:</label><input id="texto" type="text" name="enviado[]"><button type="button" onclick="duplicar()">Adicionar +</button><br>'
+		}
+	</script>
 </head>
 <body>
-	<form action="window_print.php" method="POST">
-		<label for="texto">Enviar algo:</label>
-		<input id="texto" type="text" name="enviado">
+	<form method="POST" action="window_print.php">
+		<div id="dup">
+			<label for="texto">Enviar algo:</label>
+			<input id="texto" type="text" name="enviado[]">
+			<button type="button" onclick="duplicar()">Adicionar +</button>
+			<br>
+		</div>
+		
 		<input type="submit" value="Enviar">
 	</form>
-
 </body>
 </html>
